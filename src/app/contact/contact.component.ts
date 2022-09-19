@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ArtGalleryService } from '../services/art-gallery.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ArtGalleryService } from '../services/art-gallery.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(public artServive:ArtGalleryService) { }
+  constructor(public artServive:ArtGalleryService,public actRoute:ActivatedRoute) { }
 
  public artArray:any = [];
 
@@ -16,6 +17,8 @@ export class ContactComponent implements OnInit {
   this.getArt()
   }
  getArt(){
+  let id=this.actRoute.snapshot.params['id']
+  console.log(id)
     // this.artServive.getAllart().subscribe((data)=>{
     //   console.log(data)
     // },(error)=>{

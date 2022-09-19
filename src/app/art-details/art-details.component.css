@@ -1,0 +1,101 @@
+.container{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    overflow: hidden;
+}
+.card{
+    position: absolute;
+    width: 90%;
+    height: 90vh; 
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: .5s;
+    border-radius: 8px;
+}
+.card:hover .front{
+    transform: rotateY(-180deg);
+}
+.card .front{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+    transition: 1s;
+    border: 20px solid;
+    border-color: rgb(243, 243, 126);
+}
+.card .front img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 1s;
+}
+.card .back::before{
+    content: '';
+    position: absolute;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(255,255,255,.1);
+}
+.card .back .details{
+    position: absolute;  
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(-50%);
+}
+.card .back .details h2{
+    margin: 0;
+    font-size: 24px;
+    padding: 0;
+    color: #fff;
+}
+.card:hover .back{
+    transform: rotateY(0deg);
+}
+.card .back .details h2 span{
+    color: #a7a7a7;
+    font-size: 16px;
+}
+.social-icons{
+    margin-top: 40px;
+    padding: 10px 0;
+    color: #fff;
+    line-height: 36px;
+    transition: .5s;
+} 
+.social-icons div:hover{
+    background: #e91e63;
+}
+@media (max-width:881px) {
+    .container{
+        overflow: hidden;
+    }
+    .card{
+        width: 90%;
+        height: 100vh;
+    }
+}

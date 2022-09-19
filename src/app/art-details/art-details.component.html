@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card">
+        <div class="front">
+            <img src="https://www.artic.edu/iiif/2/{{artArray.image_id}}/full/843,/0/default.jpg" alt="">
+        </div>
+        <div class="back">
+            <div class="details">
+                <h2>{{artArray.title}}<br><span>{{artArray.artist_display}}</span></h2>
+              <div class="social-icons">
+                <div>Date Displayed : <span>{{artArray.date_display}}</span></div>
+                <div>Main Reference Number: <span>{{artArray.main_reference_number}}</span></div>
+              </div>
+              <ng-container *ngIf="artArray.provenance_text; else elseTemplate">
+                <div>{{artArray.provenance_text}}</div>
+              </ng-container>
+              <ng-template #elseTemplate>
+                <div>{{null}}</div>
+              </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

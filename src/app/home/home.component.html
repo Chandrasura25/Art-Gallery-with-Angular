@@ -13,23 +13,36 @@
         <img [src]='item'>
         <div class="content">
            <h2>{{EntireSlide[i].title}}</h2> 
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit culpa soluta harum ipsum ipsam earum nostrum perferendis, dolorum impedit dolorem recusandae sapiente reiciendis nesciunt perspiciatis quaerat libero iste? Totam, excepturi.</p>
+           <ng-container *ngIf="EntireSlide[i].provenance_text != null; else elseTemplat">
+            <p>{{EntireSlide[i].provenance_text}}</p>
+           </ng-container>
+           <ng-template #elseTemplat>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit culpa soluta harum ipsum ipsam earum nostrum perferendis, dolorum impedit dolorem recusandae sapiente reiciendis nesciunt perspiciatis quaerat libero iste? Totam, excepturi.</p>
+           </ng-template>
            <a href="{{item}}">View Image</a>
         </div>
      </div>
     </div>
 </div>
-        <div *ngFor="let item of artArray;let i = index;">
+<section>
+    <div>
+        <div *ngFor="let item of artArray;let i = index;" class="each">
             <div>
                 <div class="image">
                     <img [src]='item'>
                 </div>
-             <p>{{EntireArray[i].title}}</p>
+             <p class="title">{{EntireArray[i].title}}</p>
              <div class="view">
                 <a href="{{item}}">View Image</a>
+                <a routerLink="{{EntireArray[i].id}}">View Info</a>
              </div>
             </div>
         </div>
+        <div class="next">
+            <a (click)="nextArt()"><span>Next Page</span></a>
+        </div>
+    </div>
+</section>
     </ng-container>
     <ng-template #elseTemplate>
         <div class="circle">

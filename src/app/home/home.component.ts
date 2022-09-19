@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
    public artArray:any=[]; 
    public slideArray:any=[];
    public EntireArray:any=[];
+   public Url:any ='';
    ngOnInit(): void {
    this.getArt()
    this.getSlide()
@@ -23,7 +24,8 @@ export class HomeComponent implements OnInit {
     this.artServive.tryIt().subscribe((data)=>{
       this.artObj=data
       this.EntireArray=this.artObj.data
-      console.log(this.EntireArray)
+      console.log(this.artObj.pagination.next_url)
+      this.Url=this.artObj.pagination.next_url
       this.artObj.data.map((index:any)=>{
         this.artServive.getAllart(index.image_id).subscribe((data)=>{
           console.log(data)
@@ -48,5 +50,10 @@ export class HomeComponent implements OnInit {
      })
     })
     console.log(this.slideArray)
+  }
+  nextArt(){
+    this.artServive.nextArt(this.Url).subscribe((data)=>{
+      console.log(data)
+    })
   }
 }
