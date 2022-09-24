@@ -19,11 +19,6 @@ export class ContactComponent implements OnInit {
  getArt(){
   let id=this.actRoute.snapshot.params['id']
   console.log(id)
-    // this.artServive.getAllart().subscribe((data)=>{
-    //   console.log(data)
-    // },(error)=>{
-    //   console.log(error)
-    // })
     }
  
 }

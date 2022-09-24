@@ -6,9 +6,8 @@ import {HomeComponent} from './home/home.component'
 
 
 const routes: Routes = [
-  {path:"", redirectTo:'art', pathMatch:"full"},
-  {path:'art',component:HomeComponent},
-  {path:'art/:id',component:ArtDetailsComponent},
+  {path:'',component:HomeComponent},
+  {path:':id',component:ArtDetailsComponent},
 ];
 
 @NgModule({

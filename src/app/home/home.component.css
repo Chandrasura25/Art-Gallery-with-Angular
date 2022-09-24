@@ -221,6 +221,13 @@ section{
         margin-top: 10px;
     }
 }
+@media (max-width:420px) {
+   .view a{
+    padding: 10px 20px;
+    border-radius: 20px;
+   
+   } 
+}
 .next{
     display: flex;
     justify-content: flex-end;
