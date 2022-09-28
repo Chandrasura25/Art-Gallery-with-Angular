@@ -1,7 +1,6 @@
 .container{
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     overflow: hidden;
 }
 .card{
@@ -97,5 +96,21 @@
     .card{
         width: 90%;
         height: 100vh;
+        top: 20%;
+        left: 20%;
+    }
+    .showMe{
+        position: absolute;
+        top: 2%;
+        font-style: italic;
+        font:1.2em sans-serif;
+        color:#e91e63;
+        z-index: 2;
+    }
+    .showMe::before{
+        position: absolute;
+        content: 'Click Me';
+        width: 100px;
+        height: 30px;
     }
 }

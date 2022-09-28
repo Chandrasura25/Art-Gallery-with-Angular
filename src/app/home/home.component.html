@@ -1,7 +1,7 @@
 <body>
 <ng-container *ngIf="artArray.length!=0; else elseTemplate">
 <header>
-    <a href="#" class="logo">Logo</a>
+    <a href="#" class="logo">ART</a>
     <div class="toggle">
         <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
@@ -17,9 +17,9 @@
             <p>{{EntireSlide[i].provenance_text}}</p>
            </ng-container>
            <ng-template #elseTemplat>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit culpa soluta harum ipsum ipsam earum nostrum perferendis, dolorum impedit dolorem recusandae sapiente reiciendis nesciunt perspiciatis quaerat libero iste? Totam, excepturi.</p>
+               <p>Art</p>
            </ng-template>
-           <a href="{{item}}">View Image</a>
+           <a href="{{item}}" target="_blank">View Image</a>
         </div>
      </div>
     </div>
